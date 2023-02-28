@@ -171,7 +171,7 @@
    `(org-level-8 ((t (,@headline ,@variable-tuple))))
    `(org-level-7 ((t (,@headline ,@variable-tuple))))
    `(org-level-6 ((t (,@headline ,@variable-tuple))))
-   `(org-level-5 ((t (,@headline ,@variable-tuple :foreground "#ffb86c"))))
+   `(org-level-5 ((t (,@headline ,@variable-tuple :foreground "#f1fa8c"))))
    `(org-level-4 ((t (,@headline ,@variable-tuple :foreground "#ffb86c" :height 1.2))))
    `(org-level-3 ((t (,@headline ,@variable-tuple :foreground "#8be9fd" :height 1.25))))
    `(org-level-2 ((t (,@headline ,@variable-tuple :foreground "#bd93f9" :height 1.5))))
