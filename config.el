@@ -175,7 +175,7 @@
    `(org-level-4 ((t (,@headline ,@variable-tuple :foreground "#ffb86c" :height 1.2))))
    `(org-level-3 ((t (,@headline ,@variable-tuple :foreground "#8be9fd" :height 1.25))))
    `(org-level-2 ((t (,@headline ,@variable-tuple :foreground "#bd93f9" :height 1.5))))
-   `(org-level-1 ((t (,@headline ,@variable-tuple :foreground "#ff79c6" :height 1.7))))))
+   `(org-level-1 ((t (,@headline ,@variable-tuple :foreground "#ff79c6" :height 1.75))))))
 ;;
 ;;
 (custom-theme-set-faces
