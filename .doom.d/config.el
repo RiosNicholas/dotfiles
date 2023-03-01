@@ -171,7 +171,7 @@
    `(org-level-8 ((t (,@headline ,@variable-tuple))))
    `(org-level-7 ((t (,@headline ,@variable-tuple))))
    `(org-level-6 ((t (,@headline ,@variable-tuple))))
-   `(org-level-5 ((t (,@headline ,@variable-tuple :foreground "#f1fa8c"))))
+   `(org-level-5 ((t (,@headline ,@variable-tuple :foreground "#ff5555"))))
    `(org-level-4 ((t (,@headline ,@variable-tuple :foreground "#ffb86c" :height 1.2))))
    `(org-level-3 ((t (,@headline ,@variable-tuple :foreground "#8be9fd" :height 1.25))))
    `(org-level-2 ((t (,@headline ,@variable-tuple :foreground "#bd93f9" :height 1.5))))
@@ -190,10 +190,14 @@
    '(org-document-info ((t (:foreground "dark orange"))))
    '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
    '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
-   '(org-link ((t (:foreground "royal blue" :underline t))))
+   '(org-link ((t (:foreground "#f1fa8c" :underline t))))
    '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
    '(org-property-value ((t (:inherit fixed-pitch))) t)
    '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
    '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
    '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
    '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
+;;
+;;
+;; Dracula Theme
+(setq doom-theme 'doom-dracula)
