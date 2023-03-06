@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "Nicholas Rios"
-      user-mail-address "rios.nicholas@protonmail.com")
+(setq user-full-name "John Doe"
+      user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -199,5 +199,19 @@
    '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
 ;;
 ;;
-;; Dracula Theme
+;; Dracula theme
 (setq doom-theme 'doom-dracula)
+;;
+;;
+;; Daemon
+(load "server")
+(unless (server-running-p) (server-start))
+;;
+;;
+;; Org Mode Agenda
+(setq org-agenda-files '("~/Nextcloud/Tasks/life.org"
+                         "~/Nextcloud/Tasks/school.org"
+                         "~/Nextcloud/Tasks/work.org"))
+(setq org-capture-templates
+      '(("t" "TODO" entry (file "~/Nextcloud/Tasks/refile.org")
+         "* TODO %?\n %i\n %a")))
