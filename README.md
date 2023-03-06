@@ -3,8 +3,8 @@
   <ins>My developer workflow configuration:</ins>
 </p>
 
-* <em>Item</em>
-* <em>Item</em>
-* <em>Item</em>
+* <b>Item</b>
+* <b>Item</b>
+* <b>Item</b>
 
 
