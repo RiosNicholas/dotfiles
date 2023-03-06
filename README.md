@@ -3,7 +3,7 @@
 
 ### Mac
 * <b>Shell:</b> Zsh
-* <b>Code Editor:</b> Visual Studio Code/<a href="https://github.com/doomemacs/doomemacs" target="_blank">Doom Emacs</a>/IntelliJ
+* <b>Code Editor:</b> Visual Studio Code/<a href="https://github.com/doomemacs/doomemacs" target="_blank">Doom Emacs</a>/IntelliJ/XCode
 * <b>Theme:</b> <a href="https://github.com/dracula/dracula-theme" target="_blank">Dracula</a>
 
 ### Linux
