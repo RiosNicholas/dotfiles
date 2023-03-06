@@ -1,5 +1,6 @@
 # dotfiles
-<p align=center>My developer workflow configuration.</p>
+<p align=center>
+  <ins>My developer workflow configuration.</ins>
+</p>
 
----
 
