@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Nicholas Rios"
-      user-mail-address "john@doe.com")
+      user-mail-address "johndoe@email.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'dracula)
+(setq doom-theme 'doom-dracula)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -40,7 +40,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+;; (setq org-directory "~/Nextcloud")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -100,8 +100,8 @@
 ;; DistroTube org mode config
 ;; defining a few things
 (add-hook 'org-mode-hook 'org-indent-mode)
-(setq org-directory "~/Org/"
-      org-agenda-files '("~/Org/agenda.org")
+(setq org-directory "~/Nextcloud/Org"
+      org-agenda-files '("~/Nextcloud/Org/Tasks")
       org-default-notes-file (expand-file-name "notes.org" org-directory)
       org-ellipsis " ▼ "
       org-log-done 'time
@@ -117,6 +117,7 @@
 ;; [[ddg:Name_of_Page][Description]]
 (setq org-link-abbrev-alist    ; This overwrites the default Doom org-link-abbrev-list
         '(("ddg" . "https://duckduckgo.com/?q=")
+          ("arch-wiki" . "https://wiki.archlinux.org/index.php/")
           ("wiki" . "https://en.wikipedia.org/wiki/")))
 ;;
 ;; Org Todo Keywords
@@ -209,9 +210,40 @@
 ;;
 ;;
 ;; Org Mode Agenda
-(setq org-agenda-files '("~/Nextcloud/Tasks/life.org"
-                         "~/Nextcloud/Tasks/school.org"
-                         "~/Nextcloud/Tasks/work.org"))
+;;(custom-set-variables
+;; '(org-directory "~/NextCloud/Tasks/org")
+;; '(org-agenda-files (list org-directory)))
+
+
 (setq org-capture-templates
-      '(("t" "TODO" entry (file "~/Nextcloud/Tasks/refile.org")
+      '(("t" "TODO" entry (file "~/Nextcloud/Org/Tasks/refile.org")
          "* TODO %?\n %i\n %a")))
+
+(setq
+   ;; org-fancy-priorities-list '("[A]" "[B]" "[C]")
+   ;; org-fancy-priorities-list '("❗" "[B]" "[C]")
+   org-fancy-priorities-list '("🟥" "🟧" "🟨")
+   org-priority-faces
+   '((?A :foreground "#ff6c6b" :weight bold)
+     (?B :foreground "#98be65" :weight bold)
+     (?C :foreground "#c678dd" :weight bold))
+   org-agenda-block-separator 8411)
+
+
+(setq org-agenda-custom-commands
+      '(("v" "A better agenda view"
+         ((tags "PRIORITY=\"A\""
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "High-priority unfinished tasks:")))
+          (tags "PRIORITY=\"B\""
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "Medium-priority unfinished tasks:")))
+          (tags "PRIORITY=\"C\""
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "Low-priority unfinished tasks:")))
+          (tags "customtag"
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "Tasks marked with customtag:")))
+
+          (agenda "")
+          (alltodo "")))))
