@@ -232,16 +232,16 @@
 
 (setq org-agenda-custom-commands
       '(("v" "A better agenda view"
-         ((tags "PRIORITY=\"A\""
+         ((tags-todo "PRIORITY=\"A\""
                 ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                  (org-agenda-overriding-header "High-priority unfinished tasks:")))
-          (tags "PRIORITY=\"B\""
+          (tags-todo "PRIORITY=\"B\""
                 ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                  (org-agenda-overriding-header "Medium-priority unfinished tasks:")))
-          (tags "PRIORITY=\"C\""
+          (tags-todo "PRIORITY=\"C\""
                 ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                  (org-agenda-overriding-header "Low-priority unfinished tasks:")))
-          (tags "customtag"
+          (tags-todo "customtag"
                 ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                  (org-agenda-overriding-header "Tasks marked with customtag:")))
 
