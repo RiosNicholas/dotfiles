@@ -243,8 +243,8 @@
 
 
 ;; Treemacs config
-(setq doom-themes-treemacs-enable-variable-pitch nil
-      doom-themes-treemacs-variable-pitch-face nil
+(setq doom-themes-treemacs-enable-variable-pitch t
+      doom-themes-treemacs-variable-pitch-face 'variable-pitch
       doom-themes-treemacs-line-spacing 1
       doom-themes-treemacs-theme "doom-colors"
       doom-themes-treemacs-bitmap-indicator-width 3)
