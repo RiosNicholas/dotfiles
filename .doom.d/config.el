@@ -156,6 +156,7 @@
 
 ;; automatic visual-line-mode
 (add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'term-mode-hook #'visual-line-mode)
 ;;
 (let* ((variable-tuple
         (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
@@ -219,16 +220,6 @@
       '(("t" "TODO" entry (file "~/Nextcloud/Org/Tasks/refile.org")
          "* TODO %?\n %i\n %a")))
 
-(setq
-   ;; org-fancy-priorities-list '("[A]" "[B]" "[C]")
-   ;; org-fancy-priorities-list '("❗" "[B]" "[C]")
-   org-fancy-priorities-list '("🟥" "🟧" "🟨")
-   org-priority-faces
-   '((?A :foreground "#ff6c6b" :weight bold)
-     (?B :foreground "#98be65" :weight bold)
-     (?C :foreground "#c678dd" :weight bold))
-   org-agenda-block-separator 8411)
-
 
 (setq org-agenda-custom-commands
       '(("v" "A better agenda view"
@@ -247,3 +238,13 @@
 
           (agenda "")
           (alltodo "")))))
+
+(setq shell-file-name "/bin/fish")
+
+
+;; Treemacs config
+(setq doom-themes-treemacs-enable-variable-pitch nil
+      doom-themes-treemacs-variable-pitch-face nil
+      doom-themes-treemacs-line-spacing 1
+      doom-themes-treemacs-theme "doom-colors"
+      doom-themes-treemacs-bitmap-indicator-width 3)
