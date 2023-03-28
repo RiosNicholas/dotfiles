@@ -248,3 +248,23 @@
       doom-themes-treemacs-line-spacing 1
       doom-themes-treemacs-theme "doom-colors"
       doom-themes-treemacs-bitmap-indicator-width 3)
+
+
+;; Company Mode Auto-Complete
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-auto-complete t)
+
+(setq company-auto-complete t)
+(global-set-key (kbd "C-c C-k") 'company-complete)
+
+(setq company-idle-delay 0.05)
+(after! company-box
+  (setq company-box-doc-delay 0.05))
+;;
+;; Bind Tab key to complete company selection and unbind enter from it
+(let ((tab-key (if (display-graphic-p) "<tab>" "TAB")))
+        (map! :after company-box
+              :map company-active-map
+              tab-key #'company-complete-selection
+              "<return>" nil)
+)
