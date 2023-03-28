@@ -254,9 +254,6 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-auto-complete t)
 
-(setq company-auto-complete t)
-(global-set-key (kbd "C-c C-k") 'company-complete)
-
 (setq company-idle-delay 0.05)
 (after! company-box
   (setq company-box-doc-delay 0.05))
