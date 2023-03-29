@@ -265,3 +265,9 @@
               tab-key #'company-complete-selection
               "<return>" nil)
 )
+
+;; Disable company mode in org mode
+(defun disable-company-auto-completion ()
+  (setq-local company-idle-delay nil))
+
+(add-hook! 'org-mode-hook #'disable-company-auto-completion)
