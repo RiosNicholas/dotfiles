@@ -4,13 +4,13 @@
 ### Mac
 * <b>Shell:</b> Zsh/Fish
 * <b>Code Editor:</b> Visual Studio Code/<a href="https://github.com/doomemacs/doomemacs" target="_blank">Doom Emacs</a>/XCode
-* <b>Theme:</b> <a href="https://github.com/dracula/dracula-theme" target="_blank">Dracula</a>
+* <b>Theme:</b> <a href="https://github.com/catppuccin/catppuccin" target="_blank">Catppuccin</a>
 
 ### Linux
 * <b>Distro:</b> EndeavourOS
 * <b>Window Manager:</b> KDE Plasma <a href="https://github.com/Bismuth-Forge/bismuth" target="_blank">Bismuth</a>
 * <b>Shell:</b> Zsh/Fish
 * <b>Code Editor:</b> Visual Studio Code/<a href="https://github.com/doomemacs/doomemacs" target="_blank">Doom Emacs</a>
-* <b>Theme:</b> <a href="https://github.com/dracula/dracula-theme" target="_blank">Dracula</a>
+* <b>Theme:</b> <a href="https://github.com/catppuccin/catppuccin" target="_blank">Catppuccin</a>
 
 
