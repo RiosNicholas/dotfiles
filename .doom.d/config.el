@@ -202,7 +202,11 @@
 ;;
 ;;
 ;; Dracula theme
-(setq doom-theme 'doom-dracula)
+;; (setq doom-theme 'doom-dracula)
+;; Catppuccin theme
+(setq doom-theme 'catppuccin)
+;; (setqcatppuccin-flavor 'frappe) ;; 'latte, 'macchiato, or 'mocha
+;; (catppuccin-reload)
 ;;
 ;;
 ;; Daemon
