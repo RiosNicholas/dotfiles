@@ -8,8 +8,9 @@
 
 ### Linux
 * <b>Distro:</b> EndeavourOS
-* <b>Window Manager:</b> KDE Plasma <a href="https://github.com/Bismuth-Forge/bismuth" target="_blank">Bismuth</a>
+* <b>Window Manager:</b><a href="hhttps://github.com/qtile/qtile" target="_blank">QTile</a>
 * <b>Shell:</b> Zsh/Fish
+* <b>Terminal Emulator:</b> Kitty
 * <b>Code Editor:</b> Visual Studio Code/<a href="https://github.com/doomemacs/doomemacs" target="_blank">Doom Emacs</a>
 * <b>Theme:</b> <a href="https://github.com/catppuccin/catppuccin" target="_blank">Catppuccin</a>
 
