@@ -2,18 +2,18 @@ from libqtile import widget
 from libqtile import qtile
 
 colors = [
-	      ["#282c34", "#282c34"], # panel background
-         ["#3d3f4b", "#434758"], # background for current screen tab
-         ["#ffffff", "#ffffff"], # font color for group names
-         ["#ff5555", "#ff5555"], # border line color for current tab
-         ["#74438f", "#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
-         ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
-         ["#e1acff", "#e1acff"], # window name
-         ["#ecbbfb", "#ecbbfb"]  # backbround for inactive screens
+    ["#282c34", "#282c34"], # panel background
+    ["#3d3f4b", "#434758"], # background for current screen tab
+    ["#ffffff", "#ffffff"], # font color for group names
+    ["#ff5555", "#ff5555"], # border line color for current tab
+    ["#74438f", "#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
+    ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
+    ["#e1acff", "#e1acff"], # window name
+    ["#ecbbfb", "#ecbbfb"]  # backbround for inactive screens
 ]
 catppuccin = {
     "flamingo": "#f0c6c6",
-    "mauve": "#f0c6c6",
+    "mauve": "#c6a0f6",
     "pink": "#f5bde6",
     "maroon": "#ee99a0",
     "red": "#ed8796",
@@ -22,7 +22,7 @@ catppuccin = {
     "green": "#a6da95",
     "teal": "#8bd5ca",
     "sapphire": "#7dc4e4",
-    "blue": "#8bd5ca",
+    "blue": "#8aadf4",
     "sky": "#91d7e3",
     "white": "#cad3f5",
     "gray": "#6e738d",
@@ -68,8 +68,8 @@ class MyVolume(widget.Volume):
 
 volume = MyVolume(
     fontsize=18,
-    font='JetBrainsMono Nerd Font',
-    foreground=catppuccin["peach"],
+    font='JetBrains Mono Nerd Font',
+    foreground=catppuccin["green"],
     background=catppuccin["mantle"],
     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pavucontrol")}
 )
