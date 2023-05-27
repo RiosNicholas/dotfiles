@@ -8,21 +8,42 @@ screens = [
     Screen(
         top=bar.Bar(
             [   widget.Sep(padding=3, linewidth=0, background="#00000000"),
-                widget.Image(filename='~/.config/qtile/eos-c.png', margin=3, background=catppuccin["mantle"], mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
-                widget.Sep(padding=4, linewidth=0, background=catppuccin["mantle"]), 
+                widget.Image(
+                    filename='~/.config/qtile/eos-c.png', 
+                    margin=3, 
+                    background=catppuccin["mantle"], 
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}
+                    ),
+                widget.Sep(
+                    padding=4, 
+                    linewidth=0, 
+                    background=catppuccin["mantle"]
+                    ), 
                 widget.TextBox(
                     text = '',
                     padding = 0,
                     fontsize = 28,
-                    foreground = catppuccin["mauve"],
+                    foreground = catppuccin["lavender"],
                 ),
                 widget.GroupBox(
                     highlight_method = 'block',
                     this_screen_border = catppuccin["gray"],
-                    this_current_screen_border = catppuccin["mantle"],
-                    active = catppuccin["sky"],
+                    this_current_screen_border = catppuccin["crust"],
+                    block_highlight_text_color= catppuccin["white"],
+                    active = catppuccin["crust"],
                     inactive = catppuccin["crust"],
-                    background = catppuccin["mauve"]
+                    background = catppuccin["mauve"],
+                    urgent_alert_method="block",
+                    urgent_border=catppuccin["lavender"],
+                    urgent_text=catppuccin["crust"],
+                    decorations=[
+                        RectDecoration(
+                            colour=catppuccin["lavender"],
+                            radius= 8,
+                            filled=True,
+                            # group=True
+                        )
+                    ],
                 ),
                 widget.TextBox(
                     text = '',
@@ -31,7 +52,11 @@ screens = [
                     foreground = catppuccin["mauve"]
                 ),
                 widget.Prompt(),
-                widget.WindowName(foreground = catppuccin["sapphire"], fmt='{}'),
+                widget.Spacer(length=10),
+                widget.WindowName(
+                    foreground = catppuccin["sapphire"], \
+                    fmt='{}'
+                    ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
