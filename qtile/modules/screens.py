@@ -15,7 +15,7 @@ screens = [
                     padding = 0,
                     fontsize = 28,
                     foreground = catppuccin["mauve"],
-                        ),
+                ),
                 widget.GroupBox(
                     highlight_method = 'block',
                     this_screen_border = catppuccin["gray"],
@@ -23,13 +23,13 @@ screens = [
                     active = catppuccin["sky"],
                     inactive = catppuccin["crust"],
                     background = catppuccin["mauve"]
-                    ),
+                ),
                 widget.TextBox(
                     text = '',
                     padding = 0,
                     fontsize = 28,
                     foreground = catppuccin["mauve"]
-                    ),
+                ),
                 widget.Prompt(),
                 widget.WindowName(foreground = catppuccin["sapphire"], fmt='{}'),
                 widget.Chord(
@@ -48,7 +48,8 @@ screens = [
                         'Button1':
                         lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
                     },
-                    background=catppuccin["mantle"]),
+                    background=catppuccin["mantle"]
+                ),
                 widget.Systray(icon_size = 20), 
                 volume,  
                 widget.TextBox(
@@ -56,7 +57,7 @@ screens = [
                     padding = 0,
                     fontsize = 28,
                     foreground=catppuccin["blue"]
-                    ),    
+                ),    
                 widget.Clock(format='󰥔 %Y-%m-%d %a %I:%M:%S %p',
                     background=catppuccin["blue"],
                     foreground=catppuccin["crust"]),
@@ -65,7 +66,7 @@ screens = [
                     padding = 0,
                     fontsize = 28,
                     foreground = catppuccin["blue"],
-                    ),
+                ),
 
                 widget.TextBox(
                     text='',
@@ -73,13 +74,15 @@ screens = [
                         'Button1':
                         lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
                     },
-                    foreground=catppuccin["red"]),
+                    foreground=catppuccin["red"]
+                ),
                  widget.Spacer(
                     length=5,
                     background=catppuccin["mantle"]
-                    ),
+                ),
             ],
             30,  # height in px
             background=catppuccin["mantle"]  # background color
-        ), ),
+        ), 
+    ),
 ]
