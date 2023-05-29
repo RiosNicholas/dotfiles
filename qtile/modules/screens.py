@@ -51,7 +51,7 @@ screens = [
                     urgent_text=catppuccin["crust"],
                     rounded=True,
                     disable_drag=True,
-                    fontsize=15,
+                    fontsize=13,
                     borderwidth=3,
                 ),
                 widget.TextBox(
