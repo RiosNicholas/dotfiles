@@ -19,6 +19,8 @@ keys = [
     # Launch applications
     Key([mod], "r", lazy.spawn("rofi -show combi"), desc="Spawn rofi"),
     Key([mod], "q", lazy.spawn("firefox"), desc="Launch Firefox"),
+    Key([mod], "print", lazy.spawn("flameshot gui"), desc='Screenshot'),
+    Key([mod],"e", lazy.spawn("thunar"), desc='Launch file manager'),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -70,6 +72,8 @@ keys = [
         "r",
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+    
+    # Media Control
     Key([], "XF86AudioRaiseVolume",lazy.spawn("amixer set Master 5%+")),
     Key([], "XF86AudioLowerVolume",lazy.spawn("amixer set Master 5%-")),
     Key([], "XF86AudioMute",lazy.spawn("amixer set Master toggle")),
