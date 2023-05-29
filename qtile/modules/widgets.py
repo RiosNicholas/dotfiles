@@ -28,13 +28,14 @@ catppuccin = {
     "gray": "#6e738d",
     "mantle": "#1e2030",
     "crust": "#181926",
+    "lavender": "#b7bdf8",
 }
 
 
 widget_defaults = dict(
     font='JetBrains Mono Nerd Font',
     fontsize=12,
-    padding=3,
+    padding=3
 )
 extension_defaults = widget_defaults.copy()
 class MyVolume(widget.Volume):
