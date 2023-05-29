@@ -16,7 +16,8 @@ keys = [
         lazy.layout.next(),
         desc="Move window focus to other window"),
 
-    Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
+    # Launch applications
+    Key([mod], "r", lazy.spawn("rofi -show combi"), desc="Spawn rofi"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
