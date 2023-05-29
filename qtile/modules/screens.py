@@ -5,8 +5,8 @@ from modules.keys import terminal
 import os
 import subprocess
 
-subprocess.call(["xrandr", "--output", "DP-0", "--primary", "--rate", "144"])
-subprocess.call(["xrandr", "--output", "HDMI-0", "--left-of", "DP-0"])
+subprocess.call(["xrandr", "--output", "DP-0", "--mode", "1920x1080", "--rate", "144", "--primary"])
+subprocess.call(["xrandr", "--output", "HDMI-0", "--mode", "1920x1080", "--left-of", "DP-0"])
 
 screens = [
     Screen(
