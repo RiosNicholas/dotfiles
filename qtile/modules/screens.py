@@ -1,4 +1,4 @@
-from libqtile import bar
+from libqtile import bar, widget
 from .widgets import *
 from libqtile.config import Screen
 from modules.keys import terminal
@@ -80,10 +80,26 @@ screens = [
                 ), 
                 
                 # VOLUME/MEDIA
-                volume,  
-                
+                widget.TextBox(
+                    text = '',
+                    padding = 0,
+                    fontsize = 28,
+                    foreground=catppuccin["green"]
+                ),  
+                widget.PulseVolume(
+                    fmt="󰕾 {}",
+                    foreground=catppuccin["mantle"],
+                    background=catppuccin["green"],
+                    padding=10,
+                ),  
+                widget.TextBox(
+                    text = '',
+                    padding = 0,
+                    fontsize = 28,
+                    foreground = catppuccin["green"],
+                ),
+
                 # MEMORY 
-        
                 widget.TextBox(
                     text = '',
                     padding = 0,
