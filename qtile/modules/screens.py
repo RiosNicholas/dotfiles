@@ -5,11 +5,11 @@ from modules.keys import terminal
 import os
 import subprocess
 
-
+# DISPLAY SETTINGS
 subprocess.call(["xrandr", "--output", "DP-0", "--mode", "1920x1080", "--rate", "144", "--primary"])
 subprocess.call(["xrandr", "--output", "HDMI-0", "--mode", "1920x1080", "--left-of", "DP-0"])
 
-
+# SCREENS
 screens = [
     Screen(
         top=bar.Bar(
@@ -112,7 +112,7 @@ screens = [
                     fontsize = 28,
                     foreground=catppuccin["blue"]
                 ),    
-                widget.Clock(format='󰥔 %Y-%m-%d %a %I:%M:%S %p',
+                widget.Clock(format=' %m-%d-%Y %a %I:%M:%S %p',
                     background=catppuccin["blue"],
                     foreground=catppuccin["crust"]),
                 widget.TextBox(
