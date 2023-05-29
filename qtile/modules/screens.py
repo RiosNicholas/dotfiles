@@ -5,7 +5,6 @@ from modules.keys import terminal
 import os
 import subprocess
 
-import subprocess
 subprocess.call(["xrandr", "--output", "DP-0", "--primary", "--rate", "144"])
 subprocess.call(["xrandr", "--output", "HDMI-0", "--left-of", "DP-0"])
 
