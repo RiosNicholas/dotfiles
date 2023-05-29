@@ -1,16 +1,6 @@
 from libqtile import widget
 from libqtile import qtile
 
-colors = [
-    ["#282c34", "#282c34"], # panel background
-    ["#3d3f4b", "#434758"], # background for current screen tab
-    ["#ffffff", "#ffffff"], # font color for group names
-    ["#ff5555", "#ff5555"], # border line color for current tab
-    ["#74438f", "#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
-    ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
-    ["#e1acff", "#e1acff"], # window name
-    ["#ecbbfb", "#ecbbfb"]  # backbround for inactive screens
-]
 catppuccin = {
     "flamingo": "#f0c6c6",
     "mauve": "#c6a0f6",
@@ -30,7 +20,6 @@ catppuccin = {
     "crust": "#181926",
     "lavender": "#b7bdf8",
 }
-
 
 widget_defaults = dict(
     font='JetBrains Mono Nerd Font',
