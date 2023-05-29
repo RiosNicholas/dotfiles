@@ -5,24 +5,32 @@ from modules.keys import terminal
 import os
 import subprocess
 
+
 subprocess.call(["xrandr", "--output", "DP-0", "--mode", "1920x1080", "--rate", "144", "--primary"])
 subprocess.call(["xrandr", "--output", "HDMI-0", "--mode", "1920x1080", "--left-of", "DP-0"])
+
 
 screens = [
     Screen(
         top=bar.Bar(
-            [   widget.Sep(padding=3, linewidth=0, background="#00000000"),
-                # widget.Image(
-                #     filename='~/.config/qtile/eos-c.png', 
-                #     margin=3, 
-                #     background=catppuccin["mantle"], 
-                #     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}
-                #     ),
+            [  
+                widget.Spacer(
+                    length=15,
+                    background=catppuccin["mantle"],
+                    ), 
+                widget.Image(
+                    filename='~/.config/qtile/assets/launch_Icon.png', 
+                    margin=2, 
+                    background=catppuccin["mantle"], 
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}
+                    ),
                 widget.Sep(
                     padding=4, 
                     linewidth=0, 
                     background=catppuccin["mantle"]
                     ), 
+                
+                # GROUPS
                 widget.TextBox(
                     text = '',
                     padding = 0,
@@ -30,6 +38,7 @@ screens = [
                     foreground = catppuccin["mauve"],
                 ),
                 widget.GroupBox(
+                    fontweight="bold",
                     highlight_method = 'block',
                     this_screen_border = catppuccin["gray"],
                     this_current_screen_border = catppuccin["crust"],
@@ -40,12 +49,21 @@ screens = [
                     urgent_alert_method="block",
                     urgent_border=catppuccin["lavender"],
                     urgent_text=catppuccin["crust"],
+                    rounded=True,
+                    disable_drag=True,
+                    fontsize=15,
+                    borderwidth=3,
                 ),
                 widget.TextBox(
                     text = '',
                     padding = 0,
                     fontsize = 28,
                     foreground = catppuccin["mauve"]
+                ), 
+
+                widget.Spacer(
+                    length=10,
+                    background=catppuccin["mantle"],
                 ),
                 widget.Prompt(),
                 widget.Spacer(length=10),
@@ -53,26 +71,41 @@ screens = [
                     foreground = catppuccin["sapphire"], \
                     fmt='{}'
                     ),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                           
                 widget.CurrentLayoutIcon(scale=0.75),
-                widget.CheckUpdates(
-                    update_interval=1800,
-                    distro="Arch_yay",
-                    display_format="{updates} Updates",
-                    foreground=catppuccin["pink"],
-                    mouse_callbacks={
-                        'Button1':
-                        lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
-                    },
-                    background=catppuccin["mantle"]
-                ),
-                widget.Systray(icon_size = 20), 
+
+                widget.Systray(
+                    background=catppuccin["mantle"],
+                    fontsize=2,
+                ), 
+                
+                # VOLUME/MEDIA
                 volume,  
+                
+                # MEMORY 
+        
+                widget.TextBox(
+                    text = '',
+                    padding = 0,
+                    fontsize = 28,
+                    foreground=catppuccin["flamingo"]
+                ),   
+                widget.Memory(
+                    background=catppuccin["flamingo"],
+                    foreground=catppuccin["crust"],
+                    format="󰈀 {MemUsed:.0f}{mm}",
+                    font="JetBrains Mono Bold",
+                    fontsize=13,
+                    update_interval=5,
+                ),
+                widget.TextBox(
+                    text = '',
+                    padding = 0,
+                    fontsize = 28,
+                    foreground = catppuccin["flamingo"],
+                ),
+
+                # CLOCK/DATE
                 widget.TextBox(
                     text = '',
                     padding = 0,
@@ -89,6 +122,7 @@ screens = [
                     foreground = catppuccin["blue"],
                 ),
 
+                # POWER BUTTON
                 widget.TextBox(
                     text='',
                     mouse_callbacks= {
@@ -97,9 +131,9 @@ screens = [
                     },
                     foreground=catppuccin["red"]
                 ),
-                 widget.Spacer(
-                    length=5,
-                    background=catppuccin["mantle"]
+                widget.Spacer(
+                    length=15,
+                    background=catppuccin["mantle"],
                 ),
             ],
             30,  # height in px
