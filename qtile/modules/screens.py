@@ -89,7 +89,7 @@ screens = [
                     scroll_clear=False,
                     scroll_delay=2,
                     width=200,
-                    padding=8,
+                    padding=10,
                     name="musicwidget",
                 ),
                 widget.PulseVolume(
@@ -110,11 +110,15 @@ screens = [
                     font="JetBrains Mono Bold",
                     fontsize=13,
                     update_interval=5,
+                    padding=10,
+
                 ),
                 # CLOCK/DATE   
                 widget.Clock(format=' %m-%d %a %I:%M:%S %p',
                     background=catppuccin["blue"],
-                    foreground=catppuccin["crust"]),
+                    foreground=catppuccin["crust"],
+                    padding=10,
+                    ),
                 widget.TextBox(
                     text = '',
                     padding = 0,
