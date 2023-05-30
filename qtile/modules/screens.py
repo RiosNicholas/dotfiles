@@ -86,15 +86,7 @@ screens = [
                     padding=10,
                     name="musicwidget",
                 ),
-                widget.PulseVolume(
-                    fmt="󰕾 {}",
-                    foreground=catppuccin["crust"],
-                    background=catppuccin["flamingo"],
-                    padding=10,
-                    update_interval=0.2,
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pavucontrol")}
-
-                ),  
+                volume, 
 
                 # MEMORY    
                 widget.Memory(
