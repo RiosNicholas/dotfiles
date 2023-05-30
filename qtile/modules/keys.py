@@ -17,7 +17,7 @@ keys = [
         desc="Move window focus to other window"),
 
     # Launch applications
-    Key([mod], "r", lazy.spawn("rofi -show combi"), desc="Spawn rofi"),
+    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn rofi"),
     Key([mod], "q", lazy.spawn("firefox"), desc="Launch Firefox"),
     Key([mod], "print", lazy.spawn("flameshot gui"), desc='Screenshot'),
     Key([mod],"e", lazy.spawn("thunar"), desc='Launch file manager'),
