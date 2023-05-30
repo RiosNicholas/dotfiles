@@ -18,6 +18,8 @@ screens = [
                     length=15,
                     background=catppuccin["mantle"],
                     ), 
+
+                # LAUNCH ICON
                 widget.Image(
                     filename='~/.config/qtile/assets/launch_Icon.png', 
                     margin=2, 
@@ -31,12 +33,6 @@ screens = [
                     ), 
                 
                 # GROUPS
-                widget.TextBox(
-                    text = '',
-                    padding = 0,
-                    fontsize = 28,
-                    foreground = catppuccin["mauve"],
-                ),
                 widget.GroupBox(
                     fontweight="bold",
                     highlight_method = 'block',
@@ -53,82 +49,70 @@ screens = [
                     disable_drag=True,
                     fontsize=13,
                     borderwidth=3,
+                    corner_radius=12,  # Set the corner radius value as desired
                 ),
-                widget.TextBox(
-                    text = '',
-                    padding = 0,
-                    fontsize = 28,
-                    foreground = catppuccin["mauve"]
-                ), 
 
+                # CURRENT LAYOUT ICON
+                widget.CurrentLayoutIcon(scale=0.6),
                 widget.Spacer(
                     length=10,
                     background=catppuccin["mantle"],
                 ),
+
+                # PROMPT
                 widget.Prompt(),
                 widget.Spacer(length=10),
+
+                # WINDOW NAME
                 widget.WindowName(
-                    foreground = catppuccin["sapphire"], \
+                    foreground = catppuccin["sapphire"],
                     fmt='{}'
                     ),
-                           
-                widget.CurrentLayoutIcon(scale=0.75),
-
-                widget.Systray(
-                    background=catppuccin["mantle"],
-                    fontsize=2,
-                ), 
                 
                 # VOLUME/MEDIA
-                widget.TextBox(
+                 widget.TextBox(
                     text = '',
                     padding = 0,
                     fontsize = 28,
-                    foreground=catppuccin["green"]
-                ),  
+                    foreground=catppuccin["yellow"]
+                ),
+                widget.Mpris2(
+                    foreground=catppuccin["crust"],
+                    background=catppuccin["yellow"],
+                    objname='org.mpris.MediaPlayer2.spotify',
+                    display_metadata=["xesam:title", "xesam:artist"],
+                    paused_text="\uf001 (\uead1) {track} \uf001",
+                    playing_text="\uf001 (\ueb2c) {track} \uf001",
+                    scroll=True,
+                    scroll_step=4,
+                    scroll_interval=0.2,
+                    scroll_clear=False,
+                    scroll_delay=2,
+                    width=200,
+                    padding=8,
+                    name="musicwidget",
+                ),
                 widget.PulseVolume(
                     fmt="󰕾 {}",
-                    foreground=catppuccin["mantle"],
-                    background=catppuccin["green"],
-                    padding=10,
-                ),  
-                widget.TextBox(
-                    text = '',
-                    padding = 0,
-                    fontsize = 28,
-                    foreground = catppuccin["green"],
-                ),
-
-                # MEMORY 
-                widget.TextBox(
-                    text = '',
-                    padding = 0,
-                    fontsize = 28,
-                    foreground=catppuccin["flamingo"]
-                ),   
-                widget.Memory(
+                    foreground=catppuccin["crust"],
                     background=catppuccin["flamingo"],
+                    padding=10,
+                    update_interval=0.2,
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pavucontrol")}
+
+                ),  
+
+                # MEMORY    
+                widget.Memory(
+                    background=catppuccin["maroon"],
                     foreground=catppuccin["crust"],
                     format="󰈀 {MemUsed:.0f}{mm}",
                     font="JetBrains Mono Bold",
                     fontsize=13,
                     update_interval=5,
                 ),
-                widget.TextBox(
-                    text = '',
-                    padding = 0,
-                    fontsize = 28,
-                    foreground = catppuccin["flamingo"],
-                ),
-
-                # CLOCK/DATE
-                widget.TextBox(
-                    text = '',
-                    padding = 0,
-                    fontsize = 28,
-                    foreground=catppuccin["blue"]
-                ),    
-                widget.Clock(format=' %m-%d-%Y %a %I:%M:%S %p',
+                # CLOCK/DATE   
+                widget.Clock(format=' %m-%d %a %I:%M:%S %p',
                     background=catppuccin["blue"],
                     foreground=catppuccin["crust"]),
                 widget.TextBox(
@@ -139,6 +123,10 @@ screens = [
                 ),
 
                 # POWER BUTTON
+                widget.Spacer(
+                    length=5,
+                    background=catppuccin["mantle"],
+                ),
                 widget.TextBox(
                     text='',
                     mouse_callbacks= {
