@@ -106,7 +106,7 @@ screens = [
                 widget.Memory(
                     background=catppuccin["maroon"],
                     foreground=catppuccin["crust"],
-                    format="󰈀 {MemUsed:.0f}{mm}",
+                    format=" {MemUsed:.0f}{mm}",
                     font="JetBrains Mono Bold",
                     fontsize=13,
                     update_interval=5,
