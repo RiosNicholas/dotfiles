@@ -70,12 +70,6 @@ screens = [
                     ),
                 
                 # VOLUME/MEDIA
-                 widget.TextBox(
-                    text = '',
-                    padding = 0,
-                    fontsize = 28,
-                    foreground=catppuccin["yellow"]
-                ),
                 widget.Mpris2(
                     foreground=catppuccin["crust"],
                     background=catppuccin["yellow"],
@@ -119,12 +113,6 @@ screens = [
                     foreground=catppuccin["crust"],
                     padding=10,
                     ),
-                widget.TextBox(
-                    text = '',
-                    padding = 0,
-                    fontsize = 28,
-                    foreground = catppuccin["blue"],
-                ),
 
                 # POWER BUTTON
                 widget.Spacer(
