@@ -11,7 +11,7 @@
 * <b>Window Manager:</b><a href="hhttps://github.com/qtile/qtile" target="_blank"> QTile</a>
 * <b>Shell:</b> Fish
 * <b>Terminal Emulator:</b> Kitty
-* <b>Code Editor:</b> Visual Studio Code/<a href="https://github.com/doomemacs/doomemacs" target="_blank">Doom Emacs</a>
+* <b>Code Editor:</b> VS Codium/<a href="https://github.com/doomemacs/doomemacs" target="_blank">Doom Emacs</a>
 * <b>Theme:</b><a href="https://github.com/catppuccin/catppuccin" target="_blank"> Catppuccin</a>
 * <b>Launcher:</b> Rofi
 
