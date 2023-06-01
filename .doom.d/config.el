@@ -180,6 +180,10 @@
    `(org-level-1 ((t (,@headline ,@variable-tuple :foreground "#ff79c6" :height 1.75))))))
 ;;
 ;;
+(setq doom-font (font-spec :family "JetBrains Mono" :size 16))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
 (custom-theme-set-faces
    'user
    '(variable-pitch ((t (:family "ETBembo" :height 180 :weight thin))))
