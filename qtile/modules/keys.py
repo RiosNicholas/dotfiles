@@ -20,7 +20,9 @@ keys = [
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn rofi"),
     Key([mod], "q", lazy.spawn("firefox"), desc="Launch Firefox"),
     Key([mod], "print", lazy.spawn("flameshot gui"), desc='Screenshot'),
-    Key([mod],"e", lazy.spawn("thunar"), desc='Launch file manager'),
+    Key([mod], "print", lazy.spawn("flameshot gui"), desc='Screenshot'),
+    Key([mod], "e", lazy.spawn("emacs"), desc='Launch Emacs'),
+    Key([mod], "f", lazy.spawn("thunar"), desc='Launch File Manager'),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
