@@ -187,7 +187,7 @@
 (custom-theme-set-faces
    'user
    '(variable-pitch ((t (:family "ETBembo" :height 180 :weight thin))))
-   '(fixed-pitch ((t ( :family "Fira Code Retina" :height 160)))))
+   '(fixed-pitch ((t ( :family "JetBrainsMono" :height 160)))))
 ;; Configure faces for specific Org elements
 (custom-theme-set-faces
    'user
