@@ -105,7 +105,7 @@
       org-default-notes-file (expand-file-name "notes.org" org-directory)
       org-ellipsis " ▼ "
       org-log-done 'time
-      org-journal-dir "~/Org/journal/"
+      org-journal-dir "~/Nextcloud/Org/journal/"
       org-journal-date-format "%B %d, %Y (%A) "
       org-journal-file-format "%Y-%m-%d.org"
       org-hide-emphasis-markers t)
@@ -187,7 +187,7 @@
 (custom-theme-set-faces
    'user
    '(variable-pitch ((t (:family "ETBembo" :height 180 :weight thin))))
-   '(fixed-pitch ((t ( :family "JetBrainsMono" :height 160)))))
+   '(fixed-pitch ((t ( :family "Fira Code Retina" :height 160)))))
 ;; Configure faces for specific Org elements
 (custom-theme-set-faces
    'user
@@ -247,8 +247,6 @@
           (agenda "")
           (alltodo "")))))
 
-(setq shell-file-name "/bin/fish")
-
 
 ;; Treemacs config
 (setq doom-themes-treemacs-enable-variable-pitch t
@@ -259,23 +257,30 @@
 
 
 ;; Company Mode Auto-Complete
+(use-package company
+  :after lsp-mode
+  :hook (lsp-mode . company-mode)
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.05))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-auto-complete t)
-
-(setq company-idle-delay 0.05)
-(after! company-box
-  (setq company-box-doc-delay 0.05))
-;;
-;; Bind Tab key to complete company selection and unbind enter from it
-(let ((tab-key (if (display-graphic-p) "<tab>" "TAB")))
-        (map! :after company-box
-              :map company-active-map
-              tab-key #'company-complete-selection
-              "<return>" nil)
-)
 
 ;; Disable company mode in org mode
 (defun disable-company-auto-completion ()
   (setq-local company-idle-delay nil))
 
 (add-hook! 'org-mode-hook #'disable-company-auto-completion)
+
+(use-package evil-nerd-commenter
+  :bind ("M-/" . evilnc-comment-or-uncomment-lines))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
