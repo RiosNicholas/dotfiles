@@ -15,4 +15,6 @@
 * <b>Theme:</b><a href="https://github.com/catppuccin/catppuccin" target="_blank"> Catppuccin</a>
 * <b>Launcher:</b> Rofi
 
+<img src="2023-05-30_11-37.png"></img>
+
 
