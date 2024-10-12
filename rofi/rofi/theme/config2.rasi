@@ -1,33 +1,36 @@
-/*Dracula theme based on the Purple official rofi theme*/
-
-configuration{
-    modi: "run,drun,window";
-    icon-theme: "Papirus";
-    show-icons: true;
-    terminal: "kitty";
-    drun-display-format: "{icon} {name}";
-    location: 0;
+configuration {
+    show-icons:      true;
+    display-drun:    "";
     disable-history: false;
-    hide-scrollbar: true;
-    display-drun: " 󰀻  Apps ";
-    display-run: "   Run ";
-    display-window: " 﩯  Window";
-    display-Network: "   Network";
-    sidebar-mode: true;
 }
 
 * {
+    /* Dracula theme colour palette */
+    drac-bgd: #282a36;
+    drac-cur: #44475a;
+    drac-fgd: #f8f8f2;
+    drac-cmt: #6272a4;
+    drac-cya: #8be9fd;
+    drac-grn: #50fa7b;
+    drac-ora: #ffb86c;
+    drac-pnk: #ff79c6;
+    drac-pur: #bd93f9;
+    drac-red: #ff5555;
+    drac-yel: #f1fa8c;
+
     font: "Jetbrains Mono 12";
-    foreground: #f8f8f2;
-    background-color: #282a36;
-    active-background: #6272a4;
-    urgent-background: #ff5555;
-    urgent-foreground: #282a36;
+
+    foreground: @drac-fgd;
+    background-color: @drac-bgd;
+    active-background: @drac-pnk;
+    urgent-background: @drac-red;
+    urgent-foreground: @drac-bgd;
+    
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: @active-background;
+    bordercolor: #6272a4;
 }
 
 #window {
@@ -44,7 +47,7 @@ configuration{
 #message {
     border:       0px;
     border-color: @separatorcolor;
-    padding:      1px;
+    padding:      1px ;
 }
 #textbox {
     text-color: @foreground;
@@ -71,7 +74,7 @@ configuration{
 }
 #element.normal.active {
     background-color: @active-background;
-    text-color:       @foreground;
+    text-color:       @background-color;
 }
 #element.selected.normal {
     background-color: @selected-background;
@@ -83,7 +86,7 @@ configuration{
 }
 #element.selected.active {
     background-color: @selected-active-background;
-    text-color:       @foreground;
+    text-color:       @background-color;
 }
 #element.alternate.normal {
     background-color: @background-color;
@@ -122,11 +125,11 @@ configuration{
 }
 #entry {
     spacing:    0;
-    text-color: @foreground;
+    text-color: @drac-cya;
 }
 #prompt {
     spacing:    0;
-    text-color: @foreground;
+    text-color: @drac-grn;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -135,7 +138,7 @@ configuration{
     expand:     false;
     str:        ">";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
+    text-color: @drac-pur;
 }
 element-text, element-icon {
     background-color: inherit;
