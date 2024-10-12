@@ -116,20 +116,20 @@
 ;; Org Link Abbreviations
 ;; [[ddg:Name_of_Page][Description]]
 (setq org-link-abbrev-alist    ; This overwrites the default Doom org-link-abbrev-list
-        '(("ddg" . "https://duckduckgo.com/?q=")
-          ("arch-wiki" . "https://wiki.archlinux.org/index.php/")
-          ("wiki" . "https://en.wikipedia.org/wiki/")))
+      '(("ddg" . "https://duckduckgo.com/?q=")
+        ("arch-wiki" . "https://wiki.archlinux.org/index.php/")
+        ("wiki" . "https://en.wikipedia.org/wiki/")))
 ;;
 ;; Org Todo Keywords
 (setq org-todo-keywords        ; This overwrites the default Doom org-todo-keywords
-        '((sequence
-           "TODO(t)"           ; A task that is ready to be tackled
-           "NEXT(n)"           ; Tasks that are not started but planned to do as soon as I can.
-           "PROG(p)"           ; Tasks that are working in progress (open loops)
-           "WAIT(w)"           ; Something is holding up this task
-           "|"                 ; The pipe necessary to separate "active" states and "inactive" states
-           "DONE(d)"           ; Task has been completed
-           "CANCELLED(c)" )))  ; Task has been cancelled
+      '((sequence
+         "TODO(t)"           ; A task that is ready to be tackled
+         "NEXT(n)"           ; Tasks that are not started but planned to do as soon as I can.
+         "PROG(p)"           ; Tasks that are working in progress (open loops)
+         "WAIT(w)"           ; Something is holding up this task
+         "|"                 ; The pipe necessary to separate "active" states and "inactive" states
+         "DONE(d)"           ; Task has been completed
+         "CANCELLED(c)" )))  ; Task has been cancelled
 ;;
 ;; Source Code Block Tag Expansion
 (use-package org-tempo
@@ -137,9 +137,9 @@
 ;;
 ;; Source Code Block Syntax Highlighting
 (setq org-src-fontify-natively t
-    org-src-tab-acts-natively t
-    org-confirm-babel-evaluate nil
-    org-edit-src-content-indentation 0)
+      org-src-tab-acts-natively t
+      org-confirm-babel-evaluate nil
+      org-edit-src-content-indentation 0)
 ;;
 ;; Automatically Create Table of Contents
 (use-package toc-org
@@ -158,26 +158,26 @@
 (add-hook 'org-mode-hook 'visual-line-mode)
 (add-hook 'term-mode-hook #'visual-line-mode)
 ;;
-(let* ((variable-tuple
-        (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
-              ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
-              ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
-              ((x-list-fonts "Verdana")         '(:font "Verdana"))
-              ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
-              (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
-       (base-font-color     (face-foreground 'default nil 'default))
-       (headline           `(:inherit default :weight bold :foreground ,base-font-color)))
-
-  (custom-theme-set-faces
-   'user
-   `(org-level-8 ((t (,@headline ,@variable-tuple))))
-   `(org-level-7 ((t (,@headline ,@variable-tuple))))
-   `(org-level-6 ((t (,@headline ,@variable-tuple))))
-   `(org-level-5 ((t (,@headline ,@variable-tuple :foreground "#ff5555"))))
-   `(org-level-4 ((t (,@headline ,@variable-tuple :foreground "#ffb86c" :height 1.2))))
-   `(org-level-3 ((t (,@headline ,@variable-tuple :foreground "#8be9fd" :height 1.25))))
-   `(org-level-2 ((t (,@headline ,@variable-tuple :foreground "#bd93f9" :height 1.5))))
-   `(org-level-1 ((t (,@headline ,@variable-tuple :foreground "#ff79c6" :height 1.75))))))
+;;(let* ((variable-tuple
+;;        (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
+;;              ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
+;;              ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
+;;              ((x-list-fonts "Verdana")         '(:font "Verdana"))
+;;              ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
+;;              (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
+;;       (base-font-color     (face-foreground 'default nil 'default))
+;;       (headline           `(:inherit default :weight bold :foreground ,base-font-color)))
+;;
+;;  (custom-theme-set-faces
+;;   'user
+;;   `(org-level-8 ((t (,@headline ,@variable-tuple))))
+;;   `(org-level-7 ((t (,@headline ,@variable-tuple))))
+;;   `(org-level-6 ((t (,@headline ,@variable-tuple))))
+;;   `(org-level-5 ((t (,@headline ,@variable-tuple :foreground "#ff5555"))))
+;;   `(org-level-4 ((t (,@headline ,@variable-tuple :foreground "#ffb86c" :height 1.2))))
+;;   `(org-level-3 ((t (,@headline ,@variable-tuple :foreground "#8be9fd" :height 1.25))))
+;;   `(org-level-2 ((t (,@headline ,@variable-tuple :foreground "#bd93f9" :height 1.5))))
+;;   `(org-level-1 ((t (,@headline ,@variable-tuple :foreground "#ff79c6" :height 1.75))))))
 ;;
 ;;
 (setq doom-font (font-spec :family "JetBrains Mono" :size 16))
@@ -185,30 +185,30 @@
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
 (custom-theme-set-faces
-   'user
-   '(variable-pitch ((t (:family "ETBembo" :height 180 :weight thin))))
-   '(fixed-pitch ((t ( :family "Fira Code Retina" :height 160)))))
+ 'user
+ '(variable-pitch ((t (:family "ETBembo" :height 180 :weight thin))))
+ '(fixed-pitch ((t ( :family "Fira Code Retina" :height 160)))))
 ;; Configure faces for specific Org elements
-(custom-theme-set-faces
-   'user
-   '(org-block ((t (:inherit fixed-pitch))))
-   '(org-code ((t (:inherit (shadow fixed-pitch)))))
-   '(org-document-info ((t (:foreground "dark orange"))))
-   '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
-   '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
-   '(org-link ((t (:foreground "#f1fa8c" :underline t))))
-   '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
-   '(org-property-value ((t (:inherit fixed-pitch))) t)
-   '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
-   '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
-   '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
-   '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
+;;(custom-theme-set-faces
+;;   'user
+;;   '(org-block ((t (:inherit fixed-pitch))))
+;;   '(org-code ((t (:inherit (shadow fixed-pitch)))))
+;;   '(org-document-info ((t (:foreground "dark orange"))))
+;;   '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+;;   '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
+;;   '(org-link ((t (:foreground "#f1fa8c" :underline t))))
+;;   '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+;;   '(org-property-value ((t (:inherit fixed-pitch))) t)
+;;   '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+;;   '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
+;;   '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
+;;   '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
 ;;
 ;;
 ;; Dracula theme
 ;; (setq doom-theme 'doom-dracula)
 ;; Catppuccin theme
-(setq doom-theme 'catppuccin)
+;;(setq doom-theme 'catppuccin)
 ;; (setqcatppuccin-flavor 'frappe) ;; 'latte, 'macchiato, or 'mocha
 ;; (catppuccin-reload)
 ;;
@@ -232,17 +232,17 @@
 (setq org-agenda-custom-commands
       '(("v" "A better agenda view"
          ((tags-todo "PRIORITY=\"A\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-overriding-header "High-priority unfinished tasks:")))
+                     ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                      (org-agenda-overriding-header "High-priority unfinished tasks:")))
           (tags-todo "PRIORITY=\"B\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-overriding-header "Medium-priority unfinished tasks:")))
+                     ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                      (org-agenda-overriding-header "Medium-priority unfinished tasks:")))
           (tags-todo "PRIORITY=\"C\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-overriding-header "Low-priority unfinished tasks:")))
+                     ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                      (org-agenda-overriding-header "Low-priority unfinished tasks:")))
           (tags-todo "customtag"
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-overriding-header "Tasks marked with customtag:")))
+                     ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                      (org-agenda-overriding-header "Tasks marked with customtag:")))
 
           (agenda "")
           (alltodo "")))))
@@ -257,30 +257,32 @@
 
 
 ;; Company Mode Auto-Complete
-(use-package company
-  :after lsp-mode
-  :hook (lsp-mode . company-mode)
-  :bind (:map company-active-map
-         ("<tab>" . company-complete-selection))
-        (:map lsp-mode-map
-         ("<tab>" . company-indent-or-complete-common))
-  :custom
-  (company-minimum-prefix-length 1)
-  (company-idle-delay 0.05))
+;;(use-package company
+;;  :after lsp-mode
+;;  :hook (lsp-mode . company-mode)
+;;  :bind (:map company-active-map
+;;         ("<tab>" . company-complete-selection))
+;;        (:map lsp-mode-map
+;;         ("<tab>" . company-indent-or-complete-common))
+;;  :custom
+;;  (company-minimum-prefix-length 1)
+;;  (company-idle-delay 0.05))
+;;
+;;(use-package company-box
+;;  :hook (company-mode . company-box-mode))
+;;(add-hook 'after-init-hook 'global-company-mode)
+;;(setq company-auto-complete t)
+;;
+;;;; Disable company mode in org mode
+;;(defun disable-company-auto-completion ()
+;;  (setq-local company-idle-delay nil))
+;;
+;;(add-hook! 'org-mode-hook #'disable-company-auto-completion)
+;;
+;;(use-package evil-nerd-commenter
+;;  :bind ("M-/" . evilnc-comment-or-uncomment-lines))
+;;
+;;(use-package rainbow-delimiters
+;;  :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package company-box
-  :hook (company-mode . company-box-mode))
-(add-hook 'after-init-hook 'global-company-mode)
-(setq company-auto-complete t)
-
-;; Disable company mode in org mode
-(defun disable-company-auto-completion ()
-  (setq-local company-idle-delay nil))
-
-(add-hook! 'org-mode-hook #'disable-company-auto-completion)
-
-(use-package evil-nerd-commenter
-  :bind ("M-/" . evilnc-comment-or-uncomment-lines))
-
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
+(use-package! lsp-tailwindcss)
