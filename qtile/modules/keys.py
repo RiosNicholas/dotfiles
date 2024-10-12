@@ -2,7 +2,8 @@ from libqtile import hook
 from libqtile.lazy import lazy
 from libqtile.config import Key
 
-mod = "mod1"
+#mod = "mod1"
+mod = "mod4"
 terminal = "kitty"
 
 keys = [
@@ -20,9 +21,7 @@ keys = [
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn rofi"),
     Key([mod], "q", lazy.spawn("firefox"), desc="Launch Firefox"),
     Key([mod], "print", lazy.spawn("flameshot gui"), desc='Screenshot'),
-    Key([mod], "print", lazy.spawn("flameshot gui"), desc='Screenshot'),
-    Key([mod], "e", lazy.spawn("emacs"), desc='Launch Emacs'),
-    Key([mod], "f", lazy.spawn("thunar"), desc='Launch File Manager'),
+    Key([mod],"e", lazy.spawn("emacs"), desc='Launch Emacs'),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
